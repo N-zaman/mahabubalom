@@ -1,0 +1,131 @@
+body {
+      font-family: 'Noto Sans Bengali', Arial, sans-serif;
+      margin: 0;
+      background-color: #FDF6EC;
+      color: #1E293B;
+	  }
+	  
+	header, footer {
+      background-color: #FFF7ED;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    textarea {
+      width:80vw;
+    }
+	
+	input,select {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #F97316;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 700px;
+      margin: 0 auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+   
+
+    button {
+      background-color: #F97316;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #EA580C;
+    }
+
+    .mamla-detail {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      position: relative;
+    }
+.case-info {
+      background-color: #FFFBF0;
+      border-left: 8px solid #F97316;
+	  padding:20px;
+      border-radius: 8px;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .case-info h2 {
+      margin-top: 0;
+      color: #444;
+    }
+
+    .case-info p {
+      margin: 5px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    th {
+      background-color: #f0f0f0;
+      font-size: 16px;
+    }
+
+    caption {
+      caption-side: top;
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+	a{
+	
+	text-decoration: none;
+	color:black;
+	font-weight: bold;
+	font-size:20px;
+	}
+	
+	#topItem{
+		text-align:center;
+		font-size:16px;
+	}
+
+  .dateInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+	

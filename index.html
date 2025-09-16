@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>মামলা তথ্য ফর্ম</title>
+  
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&display=swap" rel="stylesheet">
+  <link href="index.css" rel = "stylesheet">
+</head>
+<body>
+
+<header id="topItem" >
+
+	<h1>মোঃ মাহবুব আলম </h1>
+	<h3>এলএলবি , এলএলএম </h3>
+	<h4>সিনিয়র এ্যাডভোকেট নরসিংদী জজ কোর্ট, নরসিংদী  </h4>
+	<h2>মোবাইলঃ    <a href="tel:+8801911914797">০১৯১১৯১৪৭৯৭</a> </h2>
+	
+</header>
+
+
+  <form>
+    <label for="mamlaNO">মামলা নম্বর মোবাইল নম্বর বা তারিখ দিয়ে অনুসন্ধান করুন:</label>
+    <input type="text" id="searchMamlaNO" name="searchMamlaNO" value=""  oninput="this.value = this.value.replace(/[^A-Za-z0-9/]/g, '')" placeholder="ইংরেজিতে" required>
+    <br>
+    <button id="search" type="button" onclick="searchMmlaDetails()">Search Mamla</button>
+
+  </form>
+
+  <br>
+ 
+
+ 
+  <div id="mainForm" style="display:none">
+<h1>মামলা তথ্য ফর্ম</h1>
+
+<form id="mamlaForm">
+<label for="mamlaNO">মামলা নম্বর (ইংরেজিতে):</label>
+<input type="text" id="mamlaNO" name="mamlaNO" oninput="this.value = this.value.replace(/[^A-Za-z0-9/]/g, '')" placeholder="ইংরেজিতে" required>
+
+<label for="courtName">কোর্টের নাম:</label>
+<input type="text" id="courtName" name="courtName" required>
+
+<label for="mamlakarigon">মামলাকারীগন ( উমুক বনাম উমুক):</label>
+<input type="text" id="mamlakarigon" name="mamlakarigon" required>
+
+<label for="mamlarPokkho">মামলায় পক্ষ:</label>
+<input type="text" id="mamlarPokkho" name="mamlarPokkho" required>
+
+<label for="mobile">মোবাইল:</label>
+<input type="text" id="mobile" name="mobile"  oninput="this.value = this.value.replace(/[^A-Za-z0-9/]/g, '')" required>
+<h2>মামলার বিস্তারিত</h2>
+
+
+        <label>পরবর্তী ধাপ:</label>
+        <input type="text" id="nextStep" value="" required>
+
+        <label>পরবর্তী তারিখ:</label>
+        <p><label for="day">Day:</label>
+  <select class="day" id="day"></select>
+
+  <label for="month">Month:</label>
+  <select class="month" id="month"></select>
+
+  <label for="year">Year:</label>
+  <select class="year" id="year"></select></p>
+
+        <label>মন্তব্য:</label>
+        <textarea id="comment" rows="3" placeholder="কত টাকা দিয়েছেন"></textarea>
+
+        <label>PassWord:</label>
+        <input type="password" id="password" value="" required>
+        <br>
+        <button id="newMamlaButton" type="button" onclick="submitForm()">জমা দিন</button>
+    </form>
+  </div>
+<br>
+  <div  id="updateForm" style="display:none" >
+
+<form>
+        <h2>মামলার বিস্তারিত</h2>
+
+
+        <label>পরবর্তী ধাপ:</label>
+        <input type="text" id="u_nextStep" value="" required>
+
+        <label>পরবর্তী তারিখ:</label>
+        <p><label for="day">Day:</label>
+  <select class="day" id="u_day"></select>
+
+  <label for="month">Month:</label>
+  <select class="month" id="u_month"></select>
+
+  <label for="year">Year:</label>
+  <select class="year" id="u_year"></select></p>
+ 
+        <label>মন্তব্য:</label>
+        <textarea id="u_comment" rows="3" placeholder="কত টাকা দিয়েছেন"> </textarea>
+
+        <label>PassWord:</label>
+        <input type="password" id="u_password" value="" required>
+
+        <br>
+
+        <button id="updateMamlaButton" type="button" onclick="updateFormData()">জমা দিন</button>
+    </form>
+ 
+  </div>
+  <br>
+
+
+  <div id="mamlaInfo"></div>
+
+  <br>
+
+  <div id="priceInput">
+    <form>
+      <h2>মামলার ফি হিসাব করুনঃ</h2>
+    <label>জমির মূল্য কত :</label>
+    <input type="number" id="mamlaFee" value=0 required>
+    <button type="button" onclick="hisab()">জমা দিন</button>
+
+    </form>
+  </div>
+
+  <br>
+    
+  <div id="sotokerHisabId">
+    <form >
+      <h2>হিস্যার হিসাব</h2>
+        <label>মোট সম্পত্তির পরিমান ( শতাংশে ) </label>
+        <input type="number" id="motJomi" value=0 required> 
+
+        <label>পুত্রের সংখ্যাঃ  </label>
+        <input type="number" id="motPutro" value=0 required>
+
+        <label>কন্যার সংখ্যাঃ </label>
+        <input type="number" id="motKonna" value=0 required>
+        <label>স্ত্রীর সংখ্যাঃ </label>
+        <input type="number" id="motWife" value=0 required>
+        <button id="" type="button" onclick="calHissa()">জমা দিন</button> 
+    </form>
+  </div>
+
+  <br>
+     <button id="newMamla" type="button" onclick="mainForm()"><a href="#mainForm">নতুন মামলা যোগ করুন</a></button>
+
+
+<footer>
+
+	<h1>চেম্বারঃ  </h1>
+	<h2>ডিসি রোড,পুলিশ সুপারের কার্যালয়ের বিপরীত পাশে, নরসিংদী । </h2>
+
+</footer>
+
+  <script src="index.js">  </script>
+
+</body>
+</html>
