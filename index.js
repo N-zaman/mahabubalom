@@ -96,9 +96,13 @@ for (let i = 0; i < yearSelects.length; i++) {
       const totalSons = parseInt(document.getElementById("motPutro").value)
       const totalDaughters = parseInt(document.getElementById("motKonna").value)
       const totalWife = parseInt(document.getElementById("motWife").value)
+      const mainDiv = document.getElementById("hissaOutput");
+
+      mainDiv.innerHTML = ""
       const div = document.createElement("div");
       div.className = "case-info";
-      div.innerHTML = ""
+
+
 
       let temp,wifeGet,daughtersGet,sonGet,divElem = '';
 	  wifeGet = 0;
@@ -144,9 +148,13 @@ for (let i = 0; i < yearSelects.length; i++) {
       }
 
       div.innerHTML = divElem
+            if( document.getElementById("sotokerHisabId").lastElementChild == div){
+              document.getElementById("sotokerHisabId").removeChild(document.getElementById("sotokerHisabId").lastElementChild);
+      }
 
       
-      document.getElementById("sotokerHisabId").prepend(div);
+      mainDiv.appendChild(div);
+      
     }
     async function searchMmlaDetails(){
             mainFormHolder.style.display = "none";
