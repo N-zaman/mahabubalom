@@ -98,6 +98,7 @@ for (let i = 0; i < yearSelects.length; i++) {
       const totalWife = parseInt(document.getElementById("motWife").value)
       const div = document.createElement("div");
       div.className = "case-info";
+      div.innerHTML = ""
 
       let temp,wifeGet,daughtersGet,sonGet,divElem = '';
 	  wifeGet = 0;
