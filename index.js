@@ -96,25 +96,55 @@ for (let i = 0; i < yearSelects.length; i++) {
       const totalSons = parseInt(document.getElementById("motPutro").value)
       const totalDaughters = parseInt(document.getElementById("motKonna").value)
       const totalWife = parseInt(document.getElementById("motWife").value)
+      const div = document.createElement("div");
+      div.className = "case-info";
 
-      let temp,wifeGet ;
+      let temp,wifeGet,daughtersGet,sonGet,divElem = '';
 	  wifeGet = 0;
-      if(totalWife != "0"){
+
+      if(totalWife){
         wifeGet = (totalLand/(8*totalWife)).toFixed(2);
+        divElem = `
+                <p><strong>প্রত্যেক স্ত্রী পাবেঃ </strong> ${wifeGet} শতাংশ </p>
+      `
         temp = totalLand - wifeGet*totalWife;
       }else{
         temp = totalLand;
       }
-      const daughtersGet = (temp/(totalDaughters+2*totalSons)).toFixed(2);
-      const sonGet = (daughtersGet*2).toFixed(2);
-      const div = document.createElement("div");
 
-      div.className = "case-info";
-      div.innerHTML = `
+      if(!totalSons && totalDaughters){
+
+        daughtersGet = (temp/totalDaughters).toFixed(2);
+        divElem = divElem + `
+
+        <p><strong>প্রত্যেক কন্যা পাবেঃ</strong> ${daughtersGet} শতাংশ </p>
+
+      ` 
+
+      }
+      else if(totalSons && !totalDaughters){
+
+        sonGet = (temp/totalSons).toFixed(2);
+        divElem = divElem + `
+
+        <p><strong>প্রত্যেক পুত্ত্র পাবেঃ</strong> ${sonGet} শতাংশ </p>
+
+      ` 
+
+      }
+      else if(totalSons && totalDaughters){
+        daughtersGet = (temp/(totalDaughters+2*totalSons)).toFixed(2);
+        sonGet = (daughtersGet*2).toFixed(2);
+
+      divElem = divElem +  `
         <p><strong>প্রত্যেক পুত্ত্র পাবেঃ </strong> ${sonGet} শতাংশ </p>
         <p><strong>প্রত্যেক কন্যা পাবেঃ</strong> ${daughtersGet} শতাংশ </p>
-        <p><strong>প্রত্যেক স্ত্রী পাবেঃ </strong> ${wifeGet} শতাংশ </p>
       `
+      }
+
+      div.innerHTML = divElem
+
+      
       document.getElementById("sotokerHisabId").prepend(div);
     }
     async function searchMmlaDetails(){
